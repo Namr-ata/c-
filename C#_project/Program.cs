@@ -1,10 +1,11 @@
 ﻿using System;
-namespace c_sharp { 
-    class program
+namespace c_sharp
 {
-    
-    public static void Main(string[] args)
+    class program
     {
+
+        public static void Main(string[] args)
+        {       /* anagram 
             char[] s1 = "rasp".ToCharArray();
             char[] s2 = "pars".ToCharArray();
             if (Anagram(s1, s2))
@@ -15,6 +16,10 @@ namespace c_sharp {
             {
                 Console.WriteLine("The two strings are not anagram of each other");
             }
+            */
+
+            string value = RemoveDuplicateChars("google");
+            Console.WriteLine(value);
         }
         public static bool Anagram(char[] s1, char[] s2)
         {
@@ -39,6 +44,23 @@ namespace c_sharp {
 
             return true;
         }
+        
 
+                  static string RemoveDuplicateChars(string key)
+                {
+                    string table = "";
+                    string result = "";
+                    foreach (char value in key)
+                    {
+                        if (table.IndexOf(value) == -1)
+                        {
+                            table += value;
+                            result += value;
+                        }
+                    }
+                    return result;
+                }
+            
+        
     }
 }
